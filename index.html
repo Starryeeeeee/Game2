@@ -20,7 +20,7 @@
   #vanta-bg { position: fixed; inset: 0; z-index: 0; }
 
   /* ═══════════════════════════════════════════════════════════
-     🚪 进入遮罩（与 index.html 一致）
+     🚪 进入遮罩
      ═══════════════════════════════════════════════════════════ */
   #enterOverlay {
     position: fixed; inset: 0;
@@ -84,7 +84,7 @@
   }
 
   /* ═══════════════════════════════════════════════════════════
-     🎬 封面（字体与 index.html 完全一致）
+     🎬 封面
      ═══════════════════════════════════════════════════════════ */
   #cover {
     position: fixed; inset: 0;
@@ -109,7 +109,6 @@
     filter: drop-shadow(0 0 22px rgba(90,142,200,.62));
   }
 
-  /* ✅ 与 index.html 一致 */
   .club-name {
     font-family: 'AliHYAiHei-Beta', "Microsoft YaHei", "PingFang SC", "Segoe UI", sans-serif;
     font-size: 52px;
@@ -132,7 +131,6 @@
   }
   #cover.ready .title-group { opacity: 1; }
 
-  /* ✅ 与 index.html 一致 */
   .kicker {
     font-family: Georgia, "Times New Roman", serif;
     font-style: italic;
@@ -172,7 +170,7 @@
   .title .char-span { margin-right: .18em; }
   .title .char-span:last-child { margin-right: 0; }
 
-  /* ✅ 主标题：阿里巴巴普惠体（与 index.html 一致） */
+  /* ✅ 主标题：阿里巴巴普惠体*/
   .title {
     font-family: 'Alibaba PuHuiTi 3.0', 'Alibaba PuHuiTi', 'AlibabaPuHuiTi',
                  'Alibaba PuHuiTi 2.0', '阿里巴巴普惠体',
@@ -193,7 +191,6 @@
     filter: drop-shadow(0 0 26px rgba(90,142,200,.42));
   }
 
-  /* ✅ 与 index.html 一致 */
   .subtitle-cn {
     font-family: "Microsoft YaHei", "PingFang SC", "Segoe UI", sans-serif;
     font-size: clamp(21px, 1.75vw, 31px);
@@ -539,7 +536,7 @@
     '床头那个插线板，到底在给什么东西供电？',
     '哥哥四肢瘫痪，他是怎么"打字"发出消息的？',
     '妹妹为什么仅凭一条消息就能判断出不对劲？',
-    '再仔细看一遍那条消息，写法上有没有什么不自然的地方？',
+    '再仔细看一遍那条消息，有没有什么不自然的地方？',
     '如果这条消息不是本人发的，那会是谁？他为什么要阻止妹妹断网？'
   ];
 
@@ -797,7 +794,7 @@
     }, 500);
   }
 
-  /* ===== 背景（与 index.html 一致） ===== */
+  /* ===== 背景 ===== */
   window.addEventListener('DOMContentLoaded', function () {
     if (typeof VANTA !== 'undefined' && VANTA.WAVES) {
       VANTA.WAVES({
@@ -1095,9 +1092,7 @@
     await printLines([
       '  1. 只能问是非题',
       '  2. 系统只回答五种：是 / 不是 / 无关 / 是也不是 / 无法回答',
-      '  3. 不能直接猜汤底，必须通过提问逐步推出完整真相',
-      '  4. 最多提问 ' + CONFIG.maxQuestions + ' 次',
-      '  5. 输入 all 可查看已问过的所有问题与回答'
+      '  3. 不能直接猜汤底，必须通过提问逐步推出完整真相'
     ], 15, 'line-info');
 
     /* 规则输出完毕，停止跳动 */
@@ -1360,13 +1355,13 @@
 
     await sleep(500);
     appendLine('', 'line-info');
-    await typeLine('> 科普点', 26, 'line-prompt');
+    await typeLine('> 科普：', 26, 'line-prompt');
     await sleep(200);
     await printLines([
-      '· 脑机接口让瘫痪患者用意念重新恢复交流能力',
-      '· 联网设备的安全风险：脑机接口同样可能被入侵',
-      '· 身份验证：如何确认"这条信号真的来自本人"',
-      '· 断网不等于断命：脑机接口的供电与安全设计'
+      '· 脑机接口的技术让瘫痪患者能用意念重新恢复交流能力',
+      '· 然而联网设备存在安全风险：脑机接口同样可能被入侵',
+      '· 待验证的问题：如何确认"这条信号真的来自本人，如何保证使用者的思想意图被准确表达和执行？"',
+      '· 考虑的技术方向：脑机接口的供电与安全设计'
     ], 17, 'line-info');
   }
 
