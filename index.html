@@ -170,7 +170,6 @@
   .title .char-span { margin-right: .18em; }
   .title .char-span:last-child { margin-right: 0; }
 
-  /* ✅ 主标题：阿里巴巴普惠体*/
   .title {
     font-family: 'Alibaba PuHuiTi 3.0', 'Alibaba PuHuiTi', 'AlibabaPuHuiTi',
                  'Alibaba PuHuiTi 2.0', '阿里巴巴普惠体',
@@ -319,7 +318,8 @@
   .answer-both   { color: #ffdc95; font-weight: 700; letter-spacing: .06em; }
   .answer-cannot { color: #8ed0f0; font-weight: 700; letter-spacing: .06em; }
 
-  .line-hint { color: #d4bfff; }
+  /* ✅ 提示改用绿色，与成功/是 同色系 */
+  .line-hint { color: #85f0b8; }
 
   .line-ask {
     color: #ffdc95;
@@ -1259,16 +1259,16 @@
     setPhase('awaiting_continue');
   }
 
-  /* ===== 提示 ===== */
+  /* ===== 提示（改用 > 提示： 前缀 + 绿色） ===== */
   async function showHint() {
     if (hintIndex >= HINTS.length) {
-      await typeLine('  [提示] 已无更多提示', 22, 'line-hint');
+      await typeLine('  > 提示：已无更多提示', 22, 'line-hint');
       appendLine('', 'line-info');
       return;
     }
     var h = HINTS[hintIndex];
     hintIndex++;
-    await typeLine('  [提示] ' + h, 22, 'line-hint');
+    await typeLine('  > 提示：' + h, 22, 'line-hint');
     appendLine('', 'line-info');
   }
 
@@ -1278,12 +1278,12 @@
     appendLine('', 'line-info');
 
     if (records.length === 0) {
-      await typeLine('  [记录] 暂无问答记录', 22, 'line-hint');
+      await typeLine('  > 记录：暂无问答记录', 22, 'line-hint');
       appendLine('', 'line-info');
       return;
     }
 
-    await typeLine('  [记录] 共 ' + records.length + ' 条问答：', 22, 'line-hint');
+    await typeLine('  > 记录：共 ' + records.length + ' 条问答', 22, 'line-hint');
     await sleep(140);
 
     for (var i = 0; i < records.length; i++) {
@@ -1449,6 +1449,6 @@
 
 })();
 </script>
-
+ 
 </body>
 </html>
